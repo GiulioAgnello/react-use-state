@@ -76,3 +76,11 @@ Header {
   display: flex;
   justify-content: space-evenly;
 }
+
+.content {
+  display: none;
+}
+
+.content.open {
+  display: none;
+}
