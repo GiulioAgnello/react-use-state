@@ -1,21 +1,17 @@
-export default function Main() {
+import Accordion from "../variables/Accordion";
+import Paragraf from "../variables/Paragraf";
+export default function Main({ languages }) {
   return (
     <>
       <div className="buttoncontainer">
-        <button className="btn btn-warning">HTML</button>
-        <button className="btn btn-primary">CSS</button>
-        <button className="btn btn-primary">JavaScript</button>
-        <button className="btn btn-primary">Node.js</button>
-        <button className="btn btn-primary">Express</button>
-        <button className="btn btn-primary">Reacts</button>
+        {languages.map((t) => (
+          <Accordion title={t.title} key={t.id} />
+        ))}
       </div>
-      <div class="card">
-        <div class="card-body">
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card’s content.
-          </p>
-        </div>
+      <div className="card">
+        {languages.map((t) => (
+          <Paragraf key={t.id} description={t.description} />
+        ))}
       </div>
     </>
   );
